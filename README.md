@@ -1,3 +1,12 @@
+## Landing page
+
+<div class="demo">
+    <div class="items">
+    	<h4 class="title-demo">Landing page</h4>
+	    <img class="img-demo" src="./demo/landing.png">  
+    </div>
+</div>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
