@@ -1,3 +1,13 @@
+## End Point
+
+<div class="demo">
+    <div class="items">
+    	<h4 class="title-demo">Register</h4>
+	    <img class="img-demo" src="./demo/register.png">  
+    </div>
+</div>
+</section>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
