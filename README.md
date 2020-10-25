@@ -1,4 +1,4 @@
-## End Point
+## Landing page
 
 <div class="demo">
     <div class="items">
