@@ -3,7 +3,7 @@
 <div class="demo">
     <div class="items">
     	<h4 class="title-demo">Register</h4>
-	    <img class="img-demo" src="./demo/register.png">  
+	    <img class="img-demo" src="./demo/landing.png">  
     </div>
 </div>
 </section>
