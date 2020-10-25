@@ -1,0 +1,29 @@
+
+.welcome {
+    /* background-image: url(../images/acils.png); */
+    height: 100%;
+}
+
+.logo {
+  height: 70px;
+}
+
+.left-side {
+    height: 100vh;
+    font-family: 'Open Sans';
+    font-style: normal;
+    /* align-self: center;
+    justify-content: center;
+    align-items: center; */
+}
+
+.title-text {
+    font-weight: bold;
+    color: floralwhite;
+}
+
+.btn-welcome {
+    border-radius: 5%;
+    color: floralwhite;
+}
+
