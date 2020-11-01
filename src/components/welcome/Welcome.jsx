@@ -34,7 +34,7 @@ export default function Welcome() {
                     <div className="col left-side  d-flex align-items-center justify-content-center flex-column text-center">
                         <img className='logo' src="https://www.nindyakarya.co.id/lib/images/nindya-karya-logo.png" />
                         <h3 className="title-text">Laporan Tahunan</h3>
-                        <h2 className="title-text">Portal data center Nindya karya 2020</h2>
+                        <h2 className="title-text">Portal data center PT. Nindya karya (Persero)</h2>
                         <div className="row">
                             {/* <Button variant="contained" color="inherit" className={classes.button} onClick={() => history.push("/sign-in")}>
                                 SIGN IN

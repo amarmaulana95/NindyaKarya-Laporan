@@ -5,10 +5,10 @@ export const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(https://www.nindyakarya.co.id/lib/images/news/Artikel%20-%20smn%20nk%20rev.jpg)',
+    backgroundImage: 'url(https://i.ibb.co/Hz5j7CJ/reportlog.png)',
     backgroundRepeat: 'no-repeat',
     backgroundColor: theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
-    backgroundSize: 'cover',
+    backgroundSize: 'contain',
     backgroundPosition: 'center',
   },
   paper: {

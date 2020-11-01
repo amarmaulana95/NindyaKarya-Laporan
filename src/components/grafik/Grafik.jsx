@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
+import Header from '../header/Header'
 import Axios from "axios";
 
 export default class Grafik extends Component {
@@ -16,7 +17,7 @@ export default class Grafik extends Component {
                 labels: this.state.labels_created_at,
                 datasets: [
                     {
-                        label: 'total penjualan (Rp)',
+                        label: 'total laporan',
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: 'rgba(75,192,192,0.4)',
@@ -37,7 +38,7 @@ export default class Grafik extends Component {
                         data: this.state.data_total
                     },
                     {
-                        label: 'jumlah transaksi',
+                        label: 'wilayah',
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: 'rgba(75,192,192,0.4)',
@@ -62,19 +63,13 @@ export default class Grafik extends Component {
         });
     };
 
-
-
     componentDidMount() {
-
         Axios.get(`https://projectapi-tes.000webhostapp.com/produksi`, {
-
         })
             .then(res => {
-
                 this.setState({
                     data_total: res.data.produksi.map(val => val.total),
-
-                    // data_rows: res.data.map(val => val.Rows),
+                    data_rows: res.data.produksi.map(val => val.wilayah),
                     labels_created_at: res.data.produksi.map(val => val.tgl)
                 });
             })
@@ -86,18 +81,22 @@ export default class Grafik extends Component {
     render() {
         return (
             <>
-                <div className="card mb-4 shadow p-4">
-                    <h4 className="font-weight-bold mb-4">Line Chart</h4>
-                    <code>grafik transaksi harian yang terjadi dalam minggu ini </code>
-                    <div>
-                        <Line
-                            data={this.state.chartData}
-                            width={150}
-                            height={250}
-                            options={{ maintainAspectRatio: false }}
-                        />
+                <Header />
+                <div className="container">
+                    <div className="card mb-4 shadow p-4" style={{ marginTop: 40 }}>
+                        <h4 className="font-weight-bold mb-4">Line Chart</h4>
+                        <code>Grafik laporan</code>
+                        <div>
+                            <Line
+                                data={this.state.chartData}
+                                width={150}
+                                height={250}
+                                options={{ maintainAspectRatio: false }}
+                            />
+                        </div>
                     </div>
                 </div>
+
             </>
         );
     }

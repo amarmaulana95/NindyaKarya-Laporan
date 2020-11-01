@@ -33,6 +33,9 @@ export default function Header() {
   const handleGrafik = () => {
     history.push("/grafik")
   };
+  const handleDashboard = () => {
+    history.push("/dashboard")
+  };
 
   useEffect(() => {
     try {
@@ -50,12 +53,12 @@ export default function Header() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{ backgroundColor: '#f39c12' }}>
+      <AppBar position="static" style={{ backgroundColor: 'rgb(230, 89, 37)' }}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={classes.title} onClick={handleDashboard}>
             Dashboard
           </Typography>
 
@@ -71,7 +74,7 @@ export default function Header() {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            <MenuItem onClick={handleClose}>Laporan</MenuItem>
+            <MenuItem onClick={handleDashboard}>Dashboard</MenuItem>
             <MenuItem onClick={handleGrafik}>Grafik Laporan</MenuItem>
             <MenuItem onClick={handleLogout}>Logout</MenuItem>
           </Menu>

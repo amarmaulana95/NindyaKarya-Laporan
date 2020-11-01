@@ -2,24 +2,19 @@ import React, { useState, useEffect } from 'react';
 import Header from '../header/Header'
 import { useHistory } from "react-router-dom";
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 
-import Button from '@material-ui/core/Button';
+
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import CameraIcon from '@material-ui/icons/PhotoCamera';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import axios from 'axios';
@@ -43,12 +38,12 @@ export default function Dashboard() {
     const renderBody = () => {
         return item.map(({ id, tgl, wilayah, total }) => {
             return (
-                <TableRow key={id}>
+                <StyledTableRow key={id}>
                     <TableCell align="center">{id}</TableCell >
                     <TableCell align="center">{tgl}</TableCell >
                     <TableCell align="center">{wilayah}</TableCell >
                     <TableCell align="center">{total}</TableCell >
-                </TableRow >
+                </StyledTableRow  >
             )
         })
     }
@@ -57,10 +52,9 @@ export default function Dashboard() {
 
     return (
         <>
-
             <div className="container-fluid d-flex flex-column p-0">
                 <Header />
-                <div className={classes.heroContent} style={{ marginBottom: 50 }}>
+                <div className={classes.heroContent} style={{ marginTop: 50 }}>
                     <Container maxWidth="sm">
                         <Typography variant="h5" align="center" color="textSecondary" paragraph>
                             Laporan data produksi
@@ -68,15 +62,15 @@ export default function Dashboard() {
                     </Container>
                 </div>
                 <div className="container">
-                    <div className="col left-side  d-flex align-items-center justify-content-center flex-column text-center">
+                    <div className="col left-side  d-flex align-items-center justify-content-center flex-column text-center" style={{ marginTop: 50 }}>
                         <TableContainer component={Paper}>
-                            <Table className={classes.table} aria-label="simple table">
+                            <Table className={classes.table} aria-label="customized table">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell align="center">No</TableCell>
-                                        <TableCell align="center">Tanggal</TableCell>
-                                        <TableCell align="center">Wilayah</TableCell>
-                                        <TableCell align="center">Produksi</TableCell>
+                                        <StyledTableCell align="center">No</StyledTableCell >
+                                        <StyledTableCell align="center">Tanggal</StyledTableCell  >
+                                        <StyledTableCell align="center">Wilayah</StyledTableCell >
+                                        <StyledTableCell align="center">Produksi</StyledTableCell >
                                     </TableRow>
                                 </TableHead>
 
@@ -102,4 +96,21 @@ const useStyles = makeStyles((theme) => ({
         minWidth: 650,
     },
 }));
+const StyledTableCell = withStyles((theme) => ({
+    head: {
+        backgroundColor: theme.palette.common.black,
+        color: theme.palette.common.white,
+    },
+    body: {
+        fontSize: 14,
+    },
+}))(TableCell);
+
+const StyledTableRow = withStyles((theme) => ({
+    root: {
+        '&:nth-of-type(odd)': {
+            backgroundColor: theme.palette.action.hover,
+        },
+    },
+}))(TableRow);
 
